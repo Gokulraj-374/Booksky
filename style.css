@@ -1,0 +1,119 @@
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+  background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #0f2027);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  overflow-x: hidden;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.navbar {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  text-align: center;
+  color: white;
+  backdrop-filter: blur(10px);
+  border-radius: 0 0 12px 12px;
+}
+
+
+.book-container {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  margin: 20px auto;
+  width: 80%;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.book-container:hover {
+  transform: rotateY(5deg) scale(1.02);
+}
+
+
+.add-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  font-size: 30px;
+  background: #00d2ff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+
+.popup-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotateX(90deg);
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  display: none;
+  width: 300px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+  transition: transform 0.5s ease, opacity 0.3s;
+  opacity: 0;
+  z-index: 10;
+}
+
+.popup-box.active {
+  transform: translate(-50%, -50%) rotateX(0deg);
+  opacity: 1;
+}
+
+.popup-box input,
+.popup-box textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.popup-box button {
+  margin-right: 10px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#add-book {
+  background-color: #00b09b;
+  color: white;
+}
+
+#cancel-popup {
+  background-color: #ff5e57;
+  color: white;
+}
